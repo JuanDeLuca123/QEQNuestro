@@ -1,0 +1,28 @@
+﻿@using TpGrupal.Models;
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2>Usuarios</h2>
+<div class="w3-padding-large" id="main">
+
+    <h3>@Html.ActionLink("Ingresar Usuarios", "EdicionUsuarios", "BackOffice", new { Accion = "Insertar" }, null);</h3>
+
+    <table>
+        @foreach (Usuarios U in ViewBag.Lista)
+        {
+            <tr>
+                <td></td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Modificar", "EdicionUsuarios", "ABMs", new { Accion = "Modificar" }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Ver", "EdicionUsuarios", "ABMs", new { Accion = "Ver" }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Eliminar", "EdicionUsuarios", "ABMs", new { Accion = "Eliminar" }, null)</h3>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

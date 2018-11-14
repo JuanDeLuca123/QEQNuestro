@@ -1,0 +1,29 @@
+﻿@using TpGrupal.Models;
+
+@{
+    ViewBag.Title = "Categoria";
+}
+
+<h2>Categoria</h2>
+
+<div class="w3-padding-large" id="main">
+
+    <h3>@Html.ActionLink("Ingresar Categoria", "EdicionCategoria", "ABMs", new { Accion = "Insertar" }, null);</h3>
+
+    <table>
+        @foreach (Categorias C in ViewBag.Lista)
+        {
+            <tr>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Modificar", "EdicionCategoria", "ABMs", new { Accion = "Modificar" }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Ver", "EdicionCategoria", "ABMs", new { Accion = "Ver" }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Eliminar", "EdicionCategoria", "ABMs", new { Accion = "Eliminar"}, null)</h3>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

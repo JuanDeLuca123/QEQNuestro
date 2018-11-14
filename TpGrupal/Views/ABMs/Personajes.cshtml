@@ -1,0 +1,38 @@
+﻿@using TpGrupal.Models
+@{
+    ViewBag.Title = "Personajes";
+}
+
+<h2>Personajes</h2>
+
+<div class="w3-padding-large" id="main">
+
+    <h3>@Html.ActionLink("Ingresar Personaje", "EdicionPersonajes", "BackOffice", new { Accion = "Insertar" }, null);</h3>
+
+    <table>
+        @foreach (Personajes PJ in ViewBag.Lista)
+        {
+            string Foto = PJ.Imagen + ".jpg";
+
+            <tr>
+                <td>
+                    
+                    <img src="~/Content/FotoPj/@Foto" alt="Foto Personaje" class="img-rounded" />
+                </td>
+                <td>
+                    <h3><b>@PJ.Nombre</b></h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Modificar", "EdicionPersonaje", "ABMs", new { Accion = "Modificar", ID = PJ.Id }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Ver", "EdicionPersonaje", "ABMs", new { Accion = "Ver", ID = PJ.Id }, null)</h3>
+                </td>
+                <td class="Centrado">
+                    <h3> @Html.ActionLink("Eliminar", "EdicionPersonaje", "ABMs", new { Accion = "Eliminar", ID = PJ.Id }, null)</h3>
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
